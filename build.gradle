@@ -11,10 +11,11 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation "io.github.microutils:kotlin-logging:$logging_version"
-    implementation "ch.qos.logback:logback-classic:$logback_version"
+application {
+    mainClassName = 'MainKt'
+}
 
+dependencies {
     testImplementation "io.kotest:kotest-runner-junit5:$kotest_version"
 }
 
@@ -34,8 +35,4 @@ compileKotlin {
 
 compileTestKotlin {
     kotlinOptions.jvmTarget = '1.8'
-}
-
-application {
-    mainClassName = 'MainKt'
 }
